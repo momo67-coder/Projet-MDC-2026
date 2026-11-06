@@ -1,0 +1,63 @@
+from passwd import Password
+import string
+
+p = Password(0)
+lettre = ''
+valeur = 0
+for x in list(string.ascii_lowercase):
+    if p.check(x) > 0 :
+        lettre = x
+        valeur = p.check (x)
+print(lettre)
+print(valeur)
+
+p = Password(1)
+L = []
+mot = []
+valeur = 0
+for x in list(string.ascii_lowercase):
+    for y in list(string.ascii_lowercase):
+        for z in list(string.ascii_lowercase):
+            G = [x,y,z]
+            L.append(G)
+for G in L:
+    if p.check(G)>0 :
+        mot = G
+        valeur = p.check(G)
+print(mot,valeur)
+
+p = Password(2)
+C = ['0','1','2','3','4','5','6','7','8','9']
+L = []
+mot = []
+valeur = 0
+for a in C:
+    for b in C:
+        for c in C:
+            for d in C:
+                for e in C:
+                    for f in C:
+                        G = [a,b,c,d,e,f]
+                        L.append(G)
+for G in L:
+    if p.check(G) > 0:
+        mot = G
+        valeur = p.check(G)
+print(mot,valeur)
+
+p = Password(3)
+L = []
+valeurs = 0
+mot = []
+C = [chr(i) for i in range(32,127)]
+for x in C:
+    for y in C:
+        for z in C:
+            G = [x,y,z]
+            L.append(G)
+for G in L:
+    if p.check(G)>0:
+        mot = G
+        valeurs = p.check(G)
+print(mot,valeurs)
+

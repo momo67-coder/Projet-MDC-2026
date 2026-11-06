@@ -1,0 +1,33 @@
+from image_viewer import ImageViewer
+
+def negative(L):
+    for l in L:
+        (a,b,c) = l[2]
+        l[2] = (255-a,255-b,255-c)
+    return L
+
+def h_flip(L):
+    hauteur = 0
+    for l in L:
+        hauteur += l[0]
+    for l in L:
+        a = l[0]
+        l[0] = hauteur-a
+    return L
+
+def v_flip(L):
+    longeur = 0
+    for l in L:
+        longeur += l[1]
+    for l in L:
+        a = l[1]
+        l[1] = longeur-a
+
+
+    
+
+
+
+
+
+
