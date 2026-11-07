@@ -196,7 +196,7 @@ def compute_centering_parameters(width, height, size=28, margin=2):
 
     # Choisir scale pour que :
     # max(width, height) * scale = usable
-    scale = usable/(max(scale,width))  # TODO
+    scale = usable/(max(height,width))  # TODO
 
     # Dimensions du dessin apres redimensionnement
     scaled_width = width * scale  # TODO
